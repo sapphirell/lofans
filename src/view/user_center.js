@@ -21,7 +21,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class login extends Component {
+export default class user_center extends Component {
     getHttpData = () => {
         alert(1);
         const url = "http://localhost:8000/app/test";
@@ -30,11 +30,14 @@ export default class login extends Component {
         }).then((response)=>response.json()).then((jsonStr) => {});
     };
     render() {
+        const {state , goBack} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.getHttpData}>
-                    <Text>加载</Text>
+                    <Text>用户中心</Text>
                 </TouchableOpacity>
+                <Text>id:{state.params.id}</Text>
+                <Text onPress={()=>goBack()}>返回</Text>
             </View>
         );
     }

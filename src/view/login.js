@@ -22,6 +22,12 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class login extends Component  {
+    static navigationOptions = {
+        // title : '登录',
+        // header : {
+        //     visible:false
+        // }
+    };
     getHttpData = () => {
         alert(1);
         const url = "http://localhost:8000/app/test";
@@ -30,10 +36,18 @@ export default class login extends Component  {
         }).then((response)=>response.json()).then((jsonStr) => {});
     };
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.getHttpData}>
                     <Text>加载</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={ ()=>navigate('user_center',{
+                        id:123
+                    })}
+                >
+                    <Text>登录</Text>
                 </TouchableOpacity>
             </View>
         );
