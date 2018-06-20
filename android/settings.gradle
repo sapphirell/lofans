@@ -1,0 +1,3 @@
+rootProject.name = 'LoFans'
+
+include ':app'
