@@ -36,7 +36,7 @@ export default class user_center extends Component {
                 <TouchableOpacity onPress={this.getHttpData}>
                     <Text>用户中心</Text>
                 </TouchableOpacity>
-                <Text>id:{state.params.id}</Text>
+                {/*<Text>id:{state.params.id}</Text>*/}
                 <Text onPress={()=>goBack()}>返回</Text>
             </View>
         );
