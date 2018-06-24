@@ -6,8 +6,10 @@ import {
 import login from './src/view/login';
 import user_center from './src/view/user_center';
 
+global.webServer = 'http://localhost:8000/';
+
 const Tab = TabNavigator({
-        "登录": {screen: login},
+        // "登录": {screen: login},
         "用户中心": {screen: user_center},
     },{
     tabBarPosition : 'bottom',

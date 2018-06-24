@@ -10,7 +10,8 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    navigate
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -30,11 +31,19 @@ export default class user_center extends Component {
         }).then((response)=>response.json()).then((jsonStr) => {});
     };
     render() {
-        const {state , goBack} = this.props.navigation;
+        const {state , goBack ,navigate} = this.props.navigation;
+
         return (
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.getHttpData}>
-                    <Text>用户中心</Text>
+                    <Text>用户中心,欢迎用户</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={ ()=>navigate('login',{
+                        id:123
+                    })}
+                >
+                    <Text>登录</Text>
                 </TouchableOpacity>
                 {/*<Text>id:{state.params.id}</Text>*/}
                 <Text onPress={()=>goBack()}>返回</Text>
